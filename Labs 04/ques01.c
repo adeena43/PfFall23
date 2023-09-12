@@ -20,7 +20,7 @@ int main()
 			printf("*"); //this loop generates a new line afer every row of stars
 			j=j+1;
 		}
-		
+		i = i+1;
 		
 	}
 } //end main
