@@ -16,6 +16,7 @@ int main()
   char c[10] = {0}; //declaring a character array for inputs
   int i = 0;
   printf("enter the number of letters you want to enter (<10): ");
+	scanf("%d",&n);
   while(i<n) //entering elements to our array
   {
   	printf("\nEnter character %d: ",i+1);
