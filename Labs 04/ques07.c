@@ -21,14 +21,14 @@ int main()
   {
   	printf("\nEnter character %d: ",i+1);
   	scanf("%c",&letter);
-  	arr[i]= letter;
+  	c[i]= letter;
   	i = i+1;
   }
   
   i = 0;
   while(i<n/2) //checks if the elements of the array form a palindrome or not
   {
-  	if(arr[i]==arr[n-1])
+  	if(c[i]==c[n-1])
   	{
 		i = i+1;
 		n = n-1;
