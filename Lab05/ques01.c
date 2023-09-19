@@ -1,3 +1,8 @@
+/*
+*Programmer:Adina
+*Date:12Sept2023
+*Description:This program prints a pyramid of stars for n numbers.
+
 #include<stdio.h>
 
 int main()
