@@ -1,3 +1,8 @@
+/*
+*Programmer:Adina
+*Date:20Sept2023
+*Description:This program reads the surrounding intensity of light and then sets the phone brightness accordingly.
+*/
 #include <stdio.h>
 
 int main() {
