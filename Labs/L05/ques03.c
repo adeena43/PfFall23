@@ -1,3 +1,8 @@
+/*
+*Programmer:Adina
+*Date:20Sept2023
+*Description:This program asks the usr if he wants to delete or not and then prform the instructed task
+*/
 #include<stdio.h>
 
 int main()
