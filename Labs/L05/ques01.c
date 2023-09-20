@@ -1,4 +1,8 @@
-
+/*
+*Programmer:Adina
+*Date:20Sept2023
+*Description:This program tells if a number is divisible by 3 or not.
+*/
 
 #include<stdio.h>
 
