@@ -1,3 +1,8 @@
+/*
+*Programmer:Adina
+*Date:20Sept2023
+*Description:This program takes a single input from the user and then tells whether the user has inputted a small/capital letter, a number, or a special character
+*/
 #include <stdio.h>
 
 int main() {
