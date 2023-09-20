@@ -1,3 +1,8 @@
+/*
+*Programmer:Adina
+*Date:20Sept2023
+*Description:This program takes 8 bits from the user and then swaps the half bits with each other.
+*/
 #include<stdio.h>
 
 int main()
