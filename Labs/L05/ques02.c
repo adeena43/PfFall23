@@ -1,3 +1,9 @@
+/*
+*Programmer:Adina
+*Date:20Sept2023
+*Description:This program prints greetings according to the time.
+*/
+
 #include<stdio.h>
 int main()
 {
