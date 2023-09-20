@@ -1,3 +1,8 @@
+/*
+*Programmer:Adina
+*Date:20Sept2023
+*Description:This program takes two number and one operator as an input and then performs the operation
+*/
 #include <stdio.h>
 
 int main() {
