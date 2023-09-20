@@ -1,3 +1,8 @@
+/*
+*Programmer:Adina
+*Date:20Sept2023
+*Description:This program tells the roots of a quadrati equation and also tels the natur of the roots.
+*/
 #include<stdio.h>
 #include<math.h>		//including maths header file to use maths functions
 
