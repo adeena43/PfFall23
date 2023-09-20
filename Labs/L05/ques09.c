@@ -1,3 +1,8 @@
+/*
+*Programmer:Adina
+*Date:12Sept2023
+*Description:This program prints the roots of a quadratic equation.
+*/
 #include<stdio.h>
 #include<math.h>		//including maths header file to use maths functions
 
