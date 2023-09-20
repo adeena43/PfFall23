@@ -1,3 +1,9 @@
+/*
+*Programmer:Adina
+*Date:20Sept2023
+*Description:This program input an 8-bit integer from the usr, checks if its 7th and 4th bits are on, and if so, turns them off.
+*/
+
 #include<stdio.h>
 
 int main()
