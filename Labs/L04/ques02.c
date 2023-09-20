@@ -2,7 +2,7 @@
 *Programmer:Adina
 *Date:12Sept2023
 *Description:This program prints a square of stars for n numbers.
-
+*/
 //--included files--//
 #include<stdio.h>
 
