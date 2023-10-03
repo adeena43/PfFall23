@@ -1,10 +1,10 @@
-/*Write a program that will generate the Fibonacci series up to 10000. Also find the sum of the
-generated Fibonacci numbers divisible by 3, 5 or 7 only.*/
-/*
+or 7 only.*/
+
 /*
 *Programmer:Adina
 *Date:03October2023
-*Description:Practicing loop with dummy problems.
+*Description:A program that will generate the Fibonacci series up to 10000. Also find the sum of the
+generated Fibonacci numbers divisible by 3, 5 
 */
 #include<stdio.h>
 int main()
