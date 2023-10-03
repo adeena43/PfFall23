@@ -1,9 +1,9 @@
-//Write a C Program that takes any number from the user and identifies if the number is a
-//perfect number or not.
+
 /*
 *Programmer:Adina
 *Date:03October2023
-*Description:Practicing loop with dummy problems.
+*Description: a C Program that takes any number from the user and identifies if the number is a
+perfect number or not.
 */
 #include<stdio.h>
 int main()
