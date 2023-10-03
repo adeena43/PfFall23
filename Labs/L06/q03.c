@@ -1,8 +1,8 @@
-//Write a C Program to compute the LCM and GCD of two numbers.
+
 /*
 *Programmer:Adina
 *Date:03October2023
-*Description:Practicing loop with dummy problems.
+*Description:a C Program to compute the LCM and GCD of two numbers.
 */
 
 #include<stdio.h>
