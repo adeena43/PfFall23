@@ -50,14 +50,16 @@ int main()
 	{
 		for(j=0;j<2;j++)
 		{
-			if(transpose[i][j]==arr[i][j]);
+			if(transpose[i][j]==arr[i][j])
 			{
 				count++;
 			}
-			
+			else
+			count = 0;
+		
 		}
 	}
-	if(count==3)
+	if(count==4)
 	{
 		printf("\nYour matrix is symmetric");
 	}
