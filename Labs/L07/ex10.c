@@ -10,10 +10,22 @@ first on moving from left to right.
 #include <stdio.h>
 
 int main() {
-    int arr[] = {1, 2, 3, 4, 5, 6, 7, 8};
-    int n = sizeof(arr) / sizeof(arr[0]);
-    int num = 15;
-	int i;
+	int n;
+	int arr[n];
+	int i,j;
+	printf("\nEnter the size of your array: ");
+	scanf("%d",&n);
+	printf("\nNow enter your array: ");
+	for(i=0;i<n;i++)
+	{
+		printf("Enter element number %d: ",i+1);
+		scanf("%d",&arr[i]);
+	}
+    
+    //int n = sizeof(arr) / sizeof(arr[0]);
+    int num;
+	printf("\nEnter the number: ");
+	scanf("%d",&num);
     int left = 0;
     int right = 0;
     int Sum = 0;
@@ -21,7 +33,7 @@ int main() {
     while (right < n) {
         Sum += arr[right];
 
-        while (Sum > targetSum) {
+        while (Sum > num) {
             Sum -= arr[left];
             left++;
         }
@@ -40,4 +52,3 @@ int main() {
     printf("No subarray with the sum %d found.\n", num);
     return 0;
 }
-
