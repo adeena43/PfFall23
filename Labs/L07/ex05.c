@@ -1,3 +1,29 @@
+/*
+*Programmer:Adina
+*Date:10October2023
+*Description: takes a number from the user and then prints a man according to it.
+    *****
+    *****
+    *****
+***********
+     * *
+      |
+     \_/
+     | |
+*************
+**  *****  **
+**  *****  **
+**  *****  **
+**  *****  **
+    *****
+   **      **
+   **      **
+   **      **
+   **      **
+   **      **
+*****   *****
+*/
+
 #include <stdio.h>
 void cap(int n){
     int a,b,i,j;
