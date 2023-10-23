@@ -1,3 +1,10 @@
+/*
+*Programmer:Adina
+*Date:10October2023
+*Description: Divides two numbers without using the divide operator.
+*/
+
+
 #include<stdio.h>
 int main()
 {
