@@ -1,3 +1,10 @@
+/*
+*Programmer:Adina
+*Date:10October2023
+*Description: Takes a number from the user and then prints the sum of its digits.
+*/
+
+
 #include<stdio.h>
 int main()
 {
