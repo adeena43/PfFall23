@@ -1,3 +1,10 @@
+
+/*
+*Programmer:Adina
+*Date:10October2023
+*Description: Rotates the array from a certain position.
+*/
+
 #include<stdio.h>
 int main()
 {
