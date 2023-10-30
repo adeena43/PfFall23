@@ -1,0 +1,33 @@
+#include <stdio.h>
+
+int calculate_persistence(int num) {
+    int persistence = 0;
+    while (num >= 10) {
+        int product = 1;
+        while (num > 0) {
+            product *= num % 10;
+            num /= 10;
+        }
+        num = product;
+        persistence++;
+    }
+    return persistence;
+}
+
+int main() {
+    int num;
+    while (1) {
+        printf("Enter a positive integer (EOF to quit): ");
+        if (scanf("%d", &num) == 1) {
+            if (num < 1) {
+                printf("Please enter a positive integer.\n");
+            } else {
+                int persistence = calculate_persistence(num);
+                printf("The persistence of %d is %d\n", num, persistence);
+            }
+        } else {
+            break; // Terminate on EOF
+        }
+    }
+    return 0;
+}
