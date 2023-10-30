@@ -14,3 +14,6 @@ FOR i from 1 to n^3 DO
         Print i
     END IF
 END FOR
+
+##Trace table for 1729(b)
+![Ramanujan trace table](https://github.com/adeena43/PfFall23/assets/142868138/87fdb322-986d-4024-b6df-5dc00ff64e4f)
