@@ -1,0 +1,157 @@
+#include <stdio.h>
+
+int main() {
+    // Define a 2D array to represent flight availability and prices.
+    int flights[5][2] = {
+        {1, 300},   // Monday: Morning
+        {1, 320},   // Tuesday: Morning
+        {0, 280},   // Wednesday: Evening
+        {1, 380},   // Thursday: Morning
+        {1, 375}    // Friday: Morning
+    };
+	int day, flight,time;
+    int choice;
+
+    // Prompt the traveler for their choice.
+    printf("Choose an option:\n");
+    printf("1. Best day and time slot based on time and price\n");
+    printf("2. Best day for morning flight\n");
+    printf("3. Best day for evening flight\n");
+    printf("4. Check availability and price for a specific day\n");
+    scanf("%d", &choice);
+
+    switch (choice) {
+        case 1: {
+            // Determine the best day and time slot based on time and price.
+            int bestDay = -1;
+            int bestTime = -1;
+            int bestPrice = -1;
+
+            for (day = 0; day < 5; day++) {
+                for (time = 0; time < 2; time++) {
+                    if (flights[day][time] == 1) {
+                        if (bestPrice == -1 || flights[day][time + 1] < bestPrice) {
+                            bestDay = day;
+                            bestTime = time;
+                            bestPrice = flights[day][time + 1];
+                        }
+                    }
+                }
+            }
+
+            printf("Best option: ");
+            if (bestTime == 0) {
+                printf("Morning ");
+            } else {
+                printf("Evening ");
+            }
+            printf("flight on ");
+            switch (bestDay) {
+                case 0:
+                    printf("Monday");
+                    break;
+                case 1:
+                    printf("Tuesday");
+                    break;
+                case 2:
+                    printf("Wednesday");
+                    break;
+                case 3:
+                    printf("Thursday");
+                    break;
+                case 4:
+                    printf("Friday");
+                    break;
+                default:
+                    printf("No available options");
+            }
+            printf(" with a price of $%d\n", bestPrice);
+            break;
+        }
+
+        case 2: {
+            // Determine the best day for a morning flight.
+            int bestMorningDay = -1;
+            int bestMorningPrice = -1;
+
+            for (day = 0; day < 5; day++) {
+                if (flights[day][0] == 1) {
+                    if (bestMorningPrice == -1 || flights[day][1] < bestMorningPrice) {
+                        bestMorningDay = day;
+                        bestMorningPrice = flights[day][1];
+                    }
+                }
+            }
+
+            if (bestMorningDay != -1) {
+                printf("Best day for a morning flight is ");
+                switch (bestMorningDay) {
+                    case 0:
+                        printf("Monday");
+                        break;
+                    case 1:
+                        printf("Tuesday");
+                        break;
+                    case 2:
+                        printf("Wednesday");
+                        break;
+                    case 3:
+                        printf("Thursday");
+                        break;
+                    case 4:
+                        printf("Friday");
+                        break;
+                    default:
+                        printf("No available morning flights");
+                }
+                printf(" with a price of $%d\n", bestMorningPrice);
+            } else {
+                printf("No available morning flights\n");
+            }
+            break;
+        }
+
+        case 3: {
+            // Determine the best day for an evening flight.
+            int bestEveningDay = -1;
+            int bestEveningPrice = -1;
+
+            for (day = 0; day < 5; day++) {
+                if (flights[day][1] == 1) {
+                    if (bestEveningPrice == -1 || flights[day][1] < bestEveningPrice) {
+                        bestEveningDay = day;
+                        bestEveningPrice = flights[day][1];
+                    }
+                }
+            }
+
+            if (bestEveningDay != -1) {
+                printf("Best day for an evening flight is ");
+                switch (bestEveningDay) {
+                    case 0:
+                        printf("Monday");
+                        break;
+                    case 1:
+                        printf("Tuesday");
+                        break;
+                    case 2:
+                        printf("Wednesday");
+                        break;
+                    case 3:
+                        printf("Thursday");
+                        break;
+                    case 4:
+                        printf("Friday");
+                        break;
+                    default:
+                        printf("No available evening flights");
+                }
+                printf(" with a price of $%d\n", bestEveningPrice);
+            } else {
+                printf("No available evening flights\n");
+            }
+            
+        }
+    
+}
+}
