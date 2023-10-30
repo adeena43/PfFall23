@@ -1,0 +1,65 @@
+/*You are given a 2D array that represents the batting performance of a cricket team. Each row in the array
+corresponds to a different batsman, and each column represents an inning played by that batsman. The
+values in the array represent the runs scored by each batsman in each inning.
+Write a C program to perform the following tasks:
+1) Input the number of batsmen and the number of innings from the user.
+2) Input the batting performance for each batsman in each inning.
+3) Calculate and display the following statistics for each batsman.
+? Total runs scored.
+? Average runs per inning
+? Highest score in a single inning
+? Number of centuries (innings with a score of 100 or more)
+? Number of half-centuries (innings with a score of 50-99)
+Your program should display the statistics for each batsman individually*/
+
+#include<stdio.h>
+main(){
+	int i,j,a,b;
+	int c;
+	printf("enter number of batsmen\n");
+	scanf("%d",&a);
+	printf("enter number of innings\n");
+	scanf("%d",&b);
+	int arr[a][b];
+	for(i=0;i<a;i++){
+		for(j=0;j<b;j++){
+			printf("enter score for [%d] batsmen in inning [%d]",i+1,j+1);
+			scanf("%d",&arr[i][j]);
+		}
+	}
+	for(i=0;i<a;i++){
+		int total=0;
+		for(j=0;j<b;j++){
+			total+=arr[i][j];
+		
+		}
+			printf(" batsmen %d score total %d\n",i+1,total);
+			printf("average of %d batsmen is %d\n",i+1,total/b);
+	}
+	int check[0][0];
+	
+int century=0;
+int	halfcentury=0;
+	for(i=0;i<a;i++){
+int highestscore=check[i][0];
+		for(j=0;j<b;j++){
+		if(highestscore<arr[i][j]){
+			highestscore=arr[i][j];
+			 c=i+1;}
+		if(arr[i][j]>=100){
+			century++;
+		}
+		if(arr[i][j]>49 && arr[i][j]<100){
+			halfcentury++;
+		}
+			
+		
+		}
+		printf("highest score scored by %d is %d\n",c,highestscore);
+		printf("century scored by %d is %d\n",i+1,century);
+		printf("Half century scored by %d is %d\n",i+1,halfcentury);
+		
+		
+		
+	}
+}
