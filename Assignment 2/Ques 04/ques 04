@@ -1,0 +1,59 @@
+#include <stdio.h>
+
+int main() {
+    char maze[5][5] = {
+        {'S', 'O', 'O', 'W', 'W'},
+        {'O', 'W', 'O', 'W', 'W'},
+        {'W', 'O', 'O', 'W', 'O'},
+        {'W', 'W', 'O', 'W', 'O'},
+        {'W', 'W', 'O', 'E', 'W'}
+    };
+
+    int x = 0, y = 0;
+    int path_found = 0;
+	int i,j;
+   	printf("Input Original Maze:\n");
+    for (i = 0; i < 5; i++) {
+        for (j = 0; j < 5; j++) {
+            printf("%c ", maze[i][j]);
+        }
+        printf("\n");
+    }
+
+    printf("Output Maze after traversal:\n");
+	
+
+    //while (x < 5 && y < 5) {
+    //    if (maze[x][y] == 'S' || maze[x][y] == 'O' || maze[x][y] == 'E') {
+    for (x=0; x<5; x++){
+	    	for (y=path_found; y<5; y++){
+		
+	
+	if (maze[x][y]== 'S') {
+	 			//printf( " %c ", maze[x][y]);
+				printf("(%d,%d) ", x, y);
+            	
+				}
+				
+	else if (maze[x][y] == 'O') {
+                
+				//printf( " %c ", maze[x][y]);
+				printf("(%d,%d) ", x, y);
+            	
+            	}
+    else if (maze[x][y] == 'W') {
+                path_found=y-1;
+                printf("\n");            	
+				
+				break;			
+           	}    
+	else if (maze[x][y] == 'E') {
+                //printf( " %c ", maze[x][y]);
+                printf("(%d,%d) \n", x, y);
+				//printf("End of maze");
+            	
+	      	}     		    
+		}
+   }
+  return 0;
+}
