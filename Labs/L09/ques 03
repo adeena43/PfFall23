@@ -1,52 +1,41 @@
-#include<stdio.h>
+#include <stdio.h>
 int main()
 {
-	int N;
-	int i, j, k;
-	printf("\nEnter the size of your array: ");
-	scanf("%d", &N);
-	int *arr1[N];
-	char *arr2[N];
-	long long int *arr3[N];
-	printf("\nEnter the values for integer array:");
-	for(i=0;i<N;i++)
+	int n;
+	printf("enter the size of array");
+	scanf("%d",&n);
+	int *arra[n];
+	char *arrb[n];
+	long long int *arrc[n];
+	printf("enter elements in integer array");
+	for (int i=0;i<n;i++)
 	{
-		printf("\nEnter the element number %d: ", i+1);
-		scanf("%d",&arr1[i]);
-	}
+		scanf("%d",&arra[i]);
+	}//end for
+	printf("enter elements in character array");
+	for (int i=0;i<n;i++)
+	{
+		scanf(" %c",&arrb[i]);
+	}//end for
+	printf("enter elements in long integer array");
+	for (int i=0;i<n;i++)
+	{
+		scanf("%ld",&arrc[i]);
+	}//end for
+	printf("integer array\n");
+	for (int i=0;i<n;i++)
+	{
+		printf("adress=%d,element=%d\n",&arra[i],arra[i]);
+	}//end for
+	printf("character array\n");
+	for (int i=0;i<n;i++)
+	{
+		printf("adress=%d,element%c\n",&arrb[i],arrb[i]);
+	}//end for
+	printf("long integer array\n");
+	for (int i=0;i<n;i++)
+	{
+		printf("adress=%d,element=%ld\n",&arrc[i],arrc[i]);
+	}//end for
 	
-	
-	printf("\nEnter the values for character array:");
-	for(i=0;i<N;i++)
-	{
-		printf("\nEnter the element number %d: ", i+1);
-		scanf("%c ",&arr2[i]);
-	}
-	
-	
-	printf("\nEnter the values for long integer array:");
-	for(i=0;i<N;i++)
-	{
-		printf("\nEnter the element number %d: ", i+1);
-		scanf("%ld",&arr3[i]);
-	}
-	//printing the addresses and their corresponding elements of integer array
-	for(i=0;i<N;i++)
-	{
-		printf("\n(%d, %d) ", &arr1[i], arr1[i]);
-		
-	}
-	//printing the addresses and their corresponding elements of character array
-	for(i=0;i<N;i++)
-	{
-		printf("\n(%d ,%c) ", &arr2[i], arr2[i]);
-		//scanf("%ld",&arr1[i]);
-	}
-	//printing the addresses and their corresponding elements of long integer array
-	for(i=0;i<N;i++)
-	{
-		printf("\n(%d, %ld),",&arr3[i],arr3[i]);
-		//scanf("%ld",&arr1[i]);
-	}
-	
-}
+}//end main
