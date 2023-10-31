@@ -1,0 +1,35 @@
+/*#include<stdio.h>
+void swap(int a, int b)
+{
+	int temp =a;
+	a = b;
+	b = a;
+}
+int main()
+{
+	int j=2, k=5;
+	printf("j= %d, k= %d",j,k);
+	swap(j,k);
+	printf("\nj = %d, k = %d", j, k);
+	return 0;
+}*/
+
+#include<stdio.h>
+void swap(int *a, int *b)
+{
+	int temp =*a;
+	*a = *b;
+	*b = temp;
+}
+int main()
+{
+	int j=2, k=5;
+	printf("j= %d, k= %d",j,k);
+	swap(&j,&k);
+	printf("\nj = %d, k = %d", j, k);
+	return 0;
+}
+
+//A. The values did not appear to be swapped in the code provided because we did not assign a valid value to our int b
+//and also, because of call by value, the actual values of our parameters were not changed so, we had to pass the address of our integers
+//B. modification done!
