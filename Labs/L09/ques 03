@@ -1,0 +1,52 @@
+#include<stdio.h>
+int main()
+{
+	int N;
+	int i, j, k;
+	printf("\nEnter the size of your array: ");
+	scanf("%d", &N);
+	int *arr1[N];
+	char *arr2[N];
+	long long int *arr3[N];
+	printf("\nEnter the values for integer array:");
+	for(i=0;i<N;i++)
+	{
+		printf("\nEnter the element number %d: ", i+1);
+		scanf("%d",&arr1[i]);
+	}
+	
+	
+	printf("\nEnter the values for character array:");
+	for(i=0;i<N;i++)
+	{
+		printf("\nEnter the element number %d: ", i+1);
+		scanf("%c ",&arr2[i]);
+	}
+	
+	
+	printf("\nEnter the values for long integer array:");
+	for(i=0;i<N;i++)
+	{
+		printf("\nEnter the element number %d: ", i+1);
+		scanf("%ld",&arr3[i]);
+	}
+	//printing the addresses and their corresponding elements of integer array
+	for(i=0;i<N;i++)
+	{
+		printf("\n(%d, %d) ", &arr1[i], arr1[i]);
+		
+	}
+	//printing the addresses and their corresponding elements of character array
+	for(i=0;i<N;i++)
+	{
+		printf("\n(%d ,%c) ", &arr2[i], arr2[i]);
+		//scanf("%ld",&arr1[i]);
+	}
+	//printing the addresses and their corresponding elements of long integer array
+	for(i=0;i<N;i++)
+	{
+		printf("\n(%d, %ld),",&arr3[i],arr3[i]);
+		//scanf("%ld",&arr1[i]);
+	}
+	
+}
