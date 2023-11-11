@@ -1,3 +1,10 @@
+/***
+*Name:Adina Faraz
+*Des: Program to find the largest square sub matrix of all 1s from a binary matrix.
+
+*Date: 26-october-23
+***/
+
 #include<stdio.h>
 int min(int a, int b, int c) {
     int smallest = a;
