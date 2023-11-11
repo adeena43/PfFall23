@@ -1,3 +1,10 @@
+/***
+*Name:Adina Faraz
+*Des: Program to find the persistance of a number
+
+*Date: 26-october-23
+***/
+
 #include <stdio.h>
 
 int calculate_persistence(int num) {
