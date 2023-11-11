@@ -1,3 +1,10 @@
+/***
+*Name:Adina Faraz
+*Des: Path traversing program.
+
+*Date: 26-october-23
+***/
+
 #include <stdio.h>
 
 int main() {
