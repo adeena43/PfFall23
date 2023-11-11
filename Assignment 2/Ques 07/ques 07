@@ -1,3 +1,10 @@
+/***
+*Name:Adina Faraz
+*Des:Program to manage and sort shirt details for a clothing store.
+
+*Date: 26-october-23
+***/
+
 #include<stdio.h>
 main(){
 	int i,j,a;
