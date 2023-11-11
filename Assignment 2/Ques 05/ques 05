@@ -1,3 +1,10 @@
+/***
+*Name:Adina Faraz
+*Des: program to find all ramanujan numbers less than the cube of n.
+
+*Date: 26-october-23
+***/
+
 #include<stdio.h>
 
 int main()
