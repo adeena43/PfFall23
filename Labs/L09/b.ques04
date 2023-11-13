@@ -1,0 +1,58 @@
+/*
+*Programmer:Adina
+*Date:01November2023
+*Description:A C program to print fibonacci series using recursion
+*/
+#include <stdio.h>
+
+// Recursive function to print
+
+// Fibonacci series
+
+void fib(int a, int b, int sum, int N)
+
+{
+
+// Print first N term of the series
+
+if (N != 0) {
+
+printf(" %d", a);
+
+sum = a + b;
+
+a = b;
+
+b = sum;
+
+// Decrement N
+
+N--;
+
+// recursive call function fib
+
+fib(a, b, sum, N);
+
+}
+
+}
+
+// Driver Code
+
+int main()
+
+{
+
+// Given Number N
+
+int N;
+printf("\nEnter the numbr of terms you want to print? ");
+scanf("%d",&N);
+
+int a=0, b=1, sum =0;
+
+fib(a, b, sum, N);
+
+return 0;
+
+}
