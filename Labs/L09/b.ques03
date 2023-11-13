@@ -1,0 +1,36 @@
+/*
+*Programmer:Adina
+*Date:01November2023
+*Description:Finding greatest common factor of 2 numbers by Euclidean method using recursion
+*/
+
+int euclid(int a, int b)
+{
+	if(b==0)
+	{
+		return a;
+	}
+	else
+	{
+		return euclid(b,a%b);
+	}
+}
+#include<stdio.h>
+int main()
+{
+	int x,y;
+	printf("\nEnter first number: ");
+	scanf("%d", &x);
+	printf("\nEnter second number: ");
+	scanf("%d", &y);
+	int gcd=euclid(x,y);
+	printf("\nThe greatest common divisor of %d and %d is %d",x,y,gcd);
+	int temp;
+	if(x>y)
+	{
+		temp =x;
+		x=y;
+		y=temp;
+	}
+	
+}
