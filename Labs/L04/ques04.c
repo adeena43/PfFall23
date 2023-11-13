@@ -2,7 +2,7 @@
 *Programmer:Adina
 *Date:12Sept2023
 *Description:This program gives two values of x by using quadratic formula.
-
+*/
 //--included files--//
 #include<stdio.h>
 #include<math.h>
