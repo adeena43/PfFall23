@@ -56,5 +56,25 @@ void printPrime(int **matrix, int rows, int cols)
 }
 int main()
 {
+	int rows, cols;
+	int i,j;
+	printf("\nEnter the number of rows: ");
+	scanf("%d", &rows);
 	
+	printf("\nEnter the number of columns: ");
+	scanf("%d", &cols);
+	
+	//dynamically allocates memory for a 2d array
+	int** arr = (int**)malloc(rows*sizeof(int*));
+	for(i=0; i<rows;i++)
+	{
+		arr[i]=(int*)malloc(cols*sizeof(int));
+	}
+	
+	fillPrime(arr, rows, cols);
+	
+	printf("\nArray filled with consecutive prime numbers:\n");
+	printPrime(arr,rows, cols);
+	
+	return 0;
 }
