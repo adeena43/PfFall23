@@ -22,7 +22,7 @@ int main() {
     for (int i = 0; i < 5; i++) {
         printf("Enter student id: ");
         fgets(inputBuffer, sizeof(inputBuffer), stdin);
-        sscanf(inputBuffer, "%d", &data[i].stu_id);
+        //scanf( "%d", &data[i].stu_id);
 
         printf("Enter first name: ");
         fgets(data[i].fname, sizeof(data[i].fname), stdin);
@@ -37,12 +37,12 @@ int main() {
         data[i].email[strcspn(data[i].email, "\n")] = '\0';  // Remove newline character
 
         printf("Enter student cell number: ");
-        fgets(inputBuffer, sizeof(inputBuffer), stdin);
-        sscanf(inputBuffer, "%d", &data[i].cellno);
+        //fgets(inputBuffer, sizeof(inputBuffer), stdin);
+        scanf( "%d", &data[i].cellno);
 
         printf("Enter course id: ");
-        fgets(inputBuffer, sizeof(inputBuffer), stdin);
-        sscanf(inputBuffer, "%d", &data[i].reg[i].course_id);
+        //fgets(inputBuffer, sizeof(inputBuffer), stdin);
+        scanf("%d", &data[i].reg[i].course_id);
 
         printf("Enter course name: ");
         fgets(data[i].reg[i].course_name, sizeof(data[i].reg[i].course_name), stdin);
