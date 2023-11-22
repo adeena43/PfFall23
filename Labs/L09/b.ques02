@@ -1,3 +1,9 @@
+/*
+*Programmer:Adina
+*Date:24October2023
+*Description:A C program to multiply two given integers withiut using the multiplication operation using recursion
+*/
+
 #include<stdio.h>
 int product(int a, int b)
 {
