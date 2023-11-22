@@ -1,3 +1,8 @@
+/*
+*Programmer:Adina
+*Date:24October2023
+*Description:A user defined function which takes an array and its size as parameters and reverses the array
+*/
 #include<stdio.h>
 
 void reverse(int *arr, int size)
