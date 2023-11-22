@@ -1,5 +1,7 @@
 /*
-
+*Programmer:Adina
+*Date:24October2023
+*Description:A user defined function which takes two integers from the user and swaps them
 */
 /*#include<stdio.h>
 void swap(int a, int b)
