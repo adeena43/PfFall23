@@ -6,152 +6,145 @@ Make a console application that allows to input course infromation and save data
 Then it has an option to view transcript, calculate CGPA and SGPAs.
 */
 
+
 #include <stdio.h>
 #include <stdlib.h>
 
-#define MAX_COURSES 50
+#define MAX_COURSES 10
 
-// Define a structure to keep record of each course
+int semester;
+
+// Structure to store course information
 struct Course {
-    char code[20];
+    char code[10];
     char name[50];
     float gpa;
     int semester;
 };
 
-// Function prototypes
-void inputCourse(struct Course *courses, int *numCourses);
-void saveToFile(struct Course *courses, int numCourses);
-void viewTranscript(struct Course *courses, int numCourses);
-float calculateCGPA(struct Course *courses, int numCourses);
-float calculateSGPA(struct Course *courses, int numCourses, int semester);
+// Function to input course information
+void inputCourse(struct Course *course) {
+    printf("Enter Course Code: ");
+    scanf("%s", course->code);
 
-int main() { 
-int i, j;
-    struct Course courses[MAX_COURSES];
-    int numCourses = 0;
-    int choice;
+    printf("Enter Course Name: ");
+    scanf("%s", course->name);
 
-    do {
-        printf("\nMenu:\n");
-        printf("1. Input Course Information\n");
-        printf("2. Save Data to File\n");
-        printf("3. View Transcript\n");
-        printf("4. Calculate CGPA\n");
-        printf("5. Calculate SGPA\n");
-        printf("6. Exit\n");
+    printf("Enter GPA: ");
+    scanf("%f", &course->gpa);
 
-        printf("Enter your choice: ");
-        scanf("%d", &choice);
-
-        switch (choice) {
-            case 1:
-                inputCourse(courses, &numCourses);
-                break;
-            case 2:
-                saveToFile(courses, numCourses);
-                break;
-            case 3:
-                viewTranscript(courses, numCourses);
-                break;
-            case 4:
-                printf("CGPA: %.2f\n", calculateCGPA(courses, numCourses));
-                break;
-            case 5:
-                {
-                    int semester;
-                    printf("Enter semester to calculate SGPA: ");
-                    scanf("%d", &semester);
-                    printf("SGPA for Semester %d: %.2f\n", semester, calculateSGPA(courses, numCourses, semester));
-                }
-                break;
-            case 6:
-                printf("Exiting the program.\n");
-                break;
-            default:
-                printf("Invalid choice. Please enter a valid option.\n");
-        }
-
-    } while (choice != 6);
-
-    return 0;
+    printf("Enter Semester: ");
+    scanf("%d", &course->semester);
 }
 
-void inputCourse(struct Course *courses, int *numCourses) {
-    if (*numCourses < MAX_COURSES) {
-        printf("Enter course code: ");
-        scanf("% s", courses[*numCourses].code);
-
-        printf("Enter course name: ");
-        scanf("% s", courses[*numCourses].name);
-
-        printf("Enter course GPA: ");
-        scanf("%f", &courses[*numCourses].gpa);
-
-        printf("Enter semester: ");
-        scanf("%d", &courses[*numCourses].semester);
-
-        (*numCourses)++;
-        printf("Course information added successfully.\n");
-    } else {
-        printf("Maximum number of courses reached.\n");
-    }
-}
-
-void saveToFile(struct Course *courses, int numCourses) {
-    FILE *file = fopen("transcript.txt", "w");
+// Function to save course data to a file
+void saveToFile(struct Course *courses, int count) {
+    FILE *file = fopen("transcript.txt", "a");
 
     if (file == NULL) {
         perror("Error opening file");
-        return;
+        exit(EXIT_FAILURE);
     }
-	int i;
-    fprintf(file, "Course Code\tCourse Name\tGPA\tSemester\n");
-    for (i = 0; i < numCourses; i++) {
-        fprintf(file, "%s\t%s\t%.2f\t%d\n", courses[i].code, courses[i].name, courses[i].gpa, courses[i].semester);
+    int i;
+    for ( i = 0; i < count; i++) {
+        fprintf(file, "Course Code: %s, Course Name: %s, GPA: %.2f, Semester: %d\n",
+                courses[i].code, courses[i].name, courses[i].gpa, courses[i].semester);
     }
 
     fclose(file);
-    printf("Data saved to file successfully (transcript.txt).\n");
 }
 
-void viewTranscript(struct Course *courses, int numCourses) {
-	int i;
-    printf("\nTranscript:\n");
-    printf("Course Code\tCourse Name\tGPA\tSemester\n");
-    for (i = 0; i < numCourses; i++) {
-        printf("%s\t%s\t%.2f\t%d\n", courses[i].code, courses[i].name, courses[i].gpa, courses[i].semester);
+// Function to view transcript
+void viewTranscript() {
+    FILE *file = fopen("transcript.txt", "r");
+
+    if (file == NULL) {
+        perror("Error opening file");
+        exit(EXIT_FAILURE);
     }
+
+    char ch;
+    while ((ch = fgetc(file)) != EOF) {
+        printf("%c", ch);
+    }
+
+    fclose(file);
 }
 
-float calculateCGPA(struct Course *courses, int numCourses) {
-    float totalGPA = 0;
-	int i;
-    for (i = 0; i < numCourses; i++) {
+// Function to calculate CGPA
+float calculateCGPA(struct Course *courses, int count) {
+    float totalGPA = 0.0;
+    int i;
+    for ( i = 0; i < count; i++) {
         totalGPA += courses[i].gpa;
     }
 
-    if (numCourses > 0) {
-        return totalGPA / numCourses;
-    } else {
-        return 0.0;
-    }
+    return (count > 0) ? totalGPA / count : 0.0;
 }
 
-float calculateSGPA(struct Course *courses, int numCourses, int semester) {
-    float totalGPA = 0;
-    int count = 0;
-	int i;
-    for (i = 0; i < numCourses; i++) {
+// Function to calculate SGPA for a specific semester
+float calculateSGPA(struct Course *courses, int count, int semester) {
+    float totalGPA = 0.0;
+    int coursesInSemester = 0;
+    int i;
+    for ( i = 0; i < count; i++) {
         if (courses[i].semester == semester) {
             totalGPA += courses[i].gpa;
-            count++;
+            coursesInSemester++;
         }
     }
 
-    if (count > 0) {
-        return totalGPA / count;
-    } else {
-        return 0.0;
-    }
+    return (coursesInSemester > 0) ? totalGPA / coursesInSemester : 0.0;
+}
+
+int main() {
+    struct Course courses[MAX_COURSES];
+    int count = 0;
+    int option;
+
+    do {
+        printf("\n1. Input Course Information\n");
+        printf("2. Save to Transcript\n");
+        printf("3. View Transcript\n");
+        printf("4. Calculate CGPA\n");
+        printf("5. Calculate SGPA\n");
+        printf("0. Exit\n");
+        printf("Choose an option: ");
+        scanf("%d", &option);
+
+        switch (option) {
+            case 1:
+                if (count < MAX_COURSES) {
+                    inputCourse(&courses[count]);
+                    count++;
+                } else {
+                    printf("Maximum number of courses reached.\n");
+                }
+                break;
+            case 2:
+                saveToFile(courses, count);
+                printf("Data saved to transcript.txt\n");
+                break;
+            case 3:
+                viewTranscript();
+                break;
+            case 4:
+                printf("CGPA: %.2f\n", calculateCGPA(courses, count));
+                break;
+            case 5:
+                
+                printf("Enter Semester to Calculate SGPA: ");
+                scanf("%d", &semester);
+                printf("SGPA for Semester %d: %.2f\n", semester, calculateSGPA(courses, count, semester));
+                break;
+            case 0:
+                printf("Exiting the program.\n");
+                break;
+            default:
+                printf("Invalid option. Please try again.\n");
+        }
+
+    } while (option != 0);
+
+    return 0;
 }
