@@ -3,4 +3,5 @@
 
 ### Question 01
 
-![ques01](https://github.com/adeena43/PfFall23/assets/142868138/942baa58-fd5a-457c-8b93-31a6f24bfdba)
+![ques01](https://github.com/adeena43/PfFall23/assets/142868138/efe6d0b9-8e2f-408d-9428-4fba069a7bfc)
+
