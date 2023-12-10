@@ -13,7 +13,7 @@ void mergeAndWriteToFile(int recordIDs[], int numRecords);
 
 int main() {
     // Assuming you have some record IDs to process
-    int recordIDs[] = {1, 2, 3}; // Add your desired record IDs here
+    int recordIDs[] = {101, 102,103}; 
     int numRecords = sizeof(recordIDs) / sizeof(recordIDs[0]);
 
     mergeAndWriteToFile(recordIDs, numRecords);
