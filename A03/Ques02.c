@@ -1,3 +1,24 @@
+/*
+*Programmer: Adina faraz
+*Date: 9 Dec 2023
+*Descrition:For each of the 4 departments, initialize the attributes of their employees randomly using
+the rand () function.
+a. Create an initial pool of 20 names from which the names will be randomly assigned
+to each employee. A name cannot be repeated twice. If your names are same as
+any other student, then you will be awarded 0 marks.
+b. Each department will have exactly the following roles: Director, Executive,
+Manager, Employee, Trainee. A role cannot be repeated twice in the same
+department. The values for communication, teamwork, and creativity should be
+between 1 and 100 (inclusive), also randomly assigned.
+
+B) The retail company wants to give an award for “Best Department”. To find this out, you
+must compute the sum of values of each employee for all the departments. Then compare
+these 4 sums with each other to find out the best department. Your program should
+output the sum for each department along with the winner of the award of “Best
+Department”. You must print the Best Department details in the tabular form with all
+employees and their attributes.
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
